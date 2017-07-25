@@ -48,8 +48,8 @@ body {
 
 /* laps */
 #laps {
-    // min-height: 270px;
-    // overflow-y: scroll;
+    min-height: 270px;
+    overflow-y: scroll;
     
 }
 
