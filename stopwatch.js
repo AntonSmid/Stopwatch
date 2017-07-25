@@ -49,10 +49,20 @@ $(document).ready(function(){
         
     
     // click on lapButton
+    $("#lapButton").click(function(){
         // if mode is ON
+        if(mode){
             // stop action
+            clearInterval(action);
             // reset lap and print lap details
+            lapCounter = 0;
+            addLap();
             // start action
+            startAction();
+        }
+            
+    })
+        
     
 // functions ------------------------- //
     
@@ -113,6 +123,24 @@ $(document).ready(function(){
             return number;
         }
     }
+    
+    
+    // addLap function: print lap details inside the lap box
+    function addLap() {
+        lapNumber++;
+        var myLapDetails =      
+        "<div class='lap'>" + 
+            "<div class='laptimetitle'>Lap "+ format(lapNumber ) +"</div>" +
+            "<div class='laptime'>"+
+                "<span>" + format(lapMinutes) + ":</span>"+
+                "<span>" + format(lapSeconds) + ":</span>"+
+                "<span>" + format(lapCentiseconds) + "</span>"+
+            "</div>" +
+        "</div>";
+       
+        $(myLapDetails).prependTo("#laps");
+    }
+    
 
     
     
